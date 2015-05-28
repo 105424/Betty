@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Betty</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_add_bet">addBetActivity</string>
+
+    <string name="addBet_title">Add a bet</string>
+    <string name="title_activity_bet">BetActivity</string>
+    <string name="title_activity_create_gamble">createGamble</string>
+</resources>
