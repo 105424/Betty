@@ -38,7 +38,9 @@ public class Bet {
 
         Gamble closest = gambles.get(0);
         for(Gamble gamble : gambles){
-            if(Math.abs(ts - gamble.getDate().getTime()) < Math.abs(ts - closest.getDate().getTime())){
+            long diffClosest = Math.abs(ts - closest.getDate().getTime());
+            long diffOther = Math.abs(ts - gamble.getDate().getTime());
+            if(diffOther < diffClosest){
                 closest = gamble;
             }
         }

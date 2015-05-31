@@ -28,12 +28,14 @@ public class AlarmReceiver extends BroadcastReceiver {
         bs.close();
 
         for(Bet bet : bets){
-            Gamble win =  bet.calcWinner(new Date());
-            if(!bet.getWon()&& !bet.getLastWinner().equals(win.getPersonName()) ){
-                bet.setLastWinner(win.getPersonName());
-                bet.save(context);
+            if(!bet.getWon()){
+                Gamble win =  bet.calcWinner(new Date());
+                if(!bet.getLastWinner().equals(win.getPersonName()) ){
+                    bet.setLastWinner(win.getPersonName());
+                    bet.save(context);
 
-                createNotification(context, bet, win.getPersonName());
+                    createNotification(context, bet, win.getPersonName());
+                }
             }
         }
     }

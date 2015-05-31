@@ -48,7 +48,7 @@ public class BetActivity extends AppCompatActivity {
         if(bet.getWon()){
             winV.setText(bet.getWinner());
             solve.setVisibility(View.GONE);
-            SimpleDateFormat f = new SimpleDateFormat("dd-mm-yyyy");
+            SimpleDateFormat f = new SimpleDateFormat("dd-MM-yyyy");
             dateV.setText(f.format(bet.getDate()));
         }else{
             winV.setVisibility(View.GONE);
@@ -87,7 +87,7 @@ public class BetActivity extends AppCompatActivity {
                     bet.solve(cont, c.getTime());
 
                     winV.setText(bet.getWinner());
-                    SimpleDateFormat f = new SimpleDateFormat("dd-mm-yyyy");
+                    SimpleDateFormat f = new SimpleDateFormat("dd-MM-yyyy");
                     dateV.setText(f.format(bet.getDate()));
                     
                     winV.setVisibility(View.VISIBLE);
