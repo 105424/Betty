@@ -23,7 +23,7 @@ public class Gamble implements Serializable {
 
     @Override
     public String toString() {
-        SimpleDateFormat f = new SimpleDateFormat("dd-mm-yyyy");
+        SimpleDateFormat f = new SimpleDateFormat("dd-MM-yyyy");
         return this.personName + ": " + f.format(this.date);
     }
 }

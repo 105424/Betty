@@ -69,7 +69,7 @@ public class Bet {
         this.date = date;
     }
     public void setDate(String d){
-        DateFormat format = new SimpleDateFormat("MMMM d, yyyy", Locale.ENGLISH);
+        DateFormat format = new SimpleDateFormat("dd-MM-yyyy");
         try {
             this.date = format.parse(d);
         } catch (ParseException ex){
