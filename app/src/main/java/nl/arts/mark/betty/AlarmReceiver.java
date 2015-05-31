@@ -29,7 +29,7 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         for(Bet bet : bets){
             Gamble win =  bet.calcWinner(new Date());
-            if(bet.getLastWinner() != win.getPersonName() ){
+            if(!bet.getWon()&& !bet.getLastWinner().equals(win.getPersonName()) ){
                 bet.setLastWinner(win.getPersonName());
                 bet.save(context);
 
