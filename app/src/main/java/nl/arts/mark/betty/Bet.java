@@ -9,9 +9,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
-/**
- * Created by mark on 18/05/15.
- */
+
 public class Bet {
     private long id;
     private String name;
@@ -36,15 +34,10 @@ public class Bet {
 
         long ts = date.getTime();
 
-        Gamble closest = new Gamble();
-        closest.setPersonName("none");
+        Gamble closest = gambles.get(0);
         for(Gamble gamble : gambles){
-            if(gamble.getPersonName().equals("none")){
+            if(Math.abs(ts - gamble.getDate().getTime()) < Math.abs(ts - closest.getDate().getTime())){
                 closest = gamble;
-            }else{
-                if(Math.abs(ts - gamble.getDate().getTime()) < Math.abs(ts - closest.getDate().getTime())){
-                    closest = gamble;
-                }
             }
         }
         return closest;

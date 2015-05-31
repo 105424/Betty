@@ -5,6 +5,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="nl.arts.mark.betty.addBetActivity"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
     android:id="@+id/e">
 
     <TextView android:text="@string/addBet_title" android:layout_width="wrap_content"
@@ -27,6 +29,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:text="Name"
+        android:windowSoftInputMode="stateHidden"
         android:ems="10"
         android:id="@+id/addBet_name"
         android:layout_below="@+id/addBet_title"

@@ -70,7 +70,7 @@ public class BetActivity extends AppCompatActivity {
         setTitle(this.bet.getName());
 
         final ListView ls = (ListView)findViewById(R.id.bet_list);
-        ArrayAdapter<Gamble> adapter = new ArrayAdapter<Gamble>(
+        ArrayAdapter<Gamble> adapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_list_item_1,
                 this.bet.getGambles()
@@ -97,10 +97,12 @@ public class BetActivity extends AppCompatActivity {
                     winV.setText(bet.getWinner());
                     SimpleDateFormat f = new SimpleDateFormat("dd-mm-yyyy");
                     dateV.setText(f.format(bet.getDate()));
+                    
                     winV.setVisibility(View.VISIBLE);
                     winL.setVisibility(View.VISIBLE);
                     dateL.setVisibility(View.VISIBLE);
                     solve.setVisibility(View.GONE);
+
                 }
             }, mYear, mMonth, mDay);
         dpd.show();
