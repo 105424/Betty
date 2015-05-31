@@ -119,14 +119,7 @@ public class SettingsActivity extends PreferenceActivity {
         public boolean onPreferenceChange(Preference preference, Object value) {
             String stringValue = value.toString();
 
-            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(preference.getContext());
-            if(!prefs.getBoolean("notify_winners", true)) {
-                Intent alarmIntent = new Intent(preference.getContext(), AlarmReceiver.class);
-                PendingIntent pendingIntent = PendingIntent.getBroadcast(preference.getContext(), 0, alarmIntent, 0);
-
-                AlarmManager manager = (AlarmManager) preference.getContext().getSystemService(Context.ALARM_SERVICE);
-                manager.cancel(pendingIntent);
-            }
+            HomeActivity.setService(preference.getContext());
 
             preference.setSummary(stringValue);
 

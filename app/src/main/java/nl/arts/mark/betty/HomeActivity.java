@@ -68,12 +68,14 @@ public class HomeActivity extends AppCompatActivity {
     public static void setService(Context context){
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-        if(prefs.getBoolean("notify_winners", true)){
-            Intent alarmIntent = new Intent(context, AlarmReceiver.class);
-            PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, alarmIntent, 0);
 
-            AlarmManager manager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-            manager.cancel(pendingIntent);
+        Intent alarmIntent = new Intent(context, AlarmReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, alarmIntent, 0);
+
+        AlarmManager manager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        manager.cancel(pendingIntent);
+
+        if(prefs.getBoolean("notify_winners", true)){
             manager.setInexactRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), 100, pendingIntent);
         }
     }
