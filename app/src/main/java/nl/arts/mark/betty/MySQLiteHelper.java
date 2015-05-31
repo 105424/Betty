@@ -21,7 +21,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     public static final String COLUMN_LASTWINNER = "lastWinner";
 
     private static final String DATABASE_NAME = "betty.db";
-    private static final int DATABASE_VERSION = 8;
+    private static final int DATABASE_VERSION = 10;
 
     // Database creation sql statement
     private static final String DATABASE_CREATE = "create table "

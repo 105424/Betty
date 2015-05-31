@@ -18,9 +18,6 @@ public class AlarmReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-
-        // For our recurring task, we'll just display a message
-        Toast.makeText(context, "I'm running", Toast.LENGTH_SHORT).show();
         check(context);
     }
 
@@ -34,7 +31,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         for(Bet bet : bets){
             Gamble win =  bet.calcWinner(new Date());
             if(bet.getLastWinner() != win.getPersonName() ){
-                bet.setWinner(win.getPersonName());
+                bet.setLastWinner(win.getPersonName());
                 bet.save(context);
 
                 createNotification(context, bet, win.getPersonName());
@@ -48,7 +45,7 @@ public class AlarmReceiver extends BroadcastReceiver {
                 new NotificationCompat.Builder(context)
                         .setSmallIcon(R.drawable.ic_stat_action_alarm)
                         .setContentTitle("A new person might win a bet")
-                        .setContentText(winner+" lost: "+bet.getName());
+                        .setContentText(winner+" will win: "+bet.getName());
         // Creates an explicit intent for an Activity in your app
         Intent resultIntent = new Intent(context, BetActivity.class);
         resultIntent.putExtra("betId", bet.getId());
