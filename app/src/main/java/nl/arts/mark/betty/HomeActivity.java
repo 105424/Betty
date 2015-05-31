@@ -71,7 +71,7 @@ public class HomeActivity extends AppCompatActivity {
         manager.cancel(pendingIntent);
 
         if(prefs.getBoolean("notify_winners", true)){
-            manager.setInexactRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), 100, pendingIntent);
+            manager.setInexactRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), 1000, pendingIntent);
         }
     }
 

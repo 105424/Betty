@@ -30,9 +30,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="464ce860-d9df-4273-9605-e872d16cd38f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/nl/arts/mark/betty/AlarmReceiver.java" afterPath="$PROJECT_DIR$/app/src/main/java/nl/arts/mark/betty/AlarmReceiver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/nl/arts/mark/betty/Bet.java" afterPath="$PROJECT_DIR$/app/src/main/java/nl/arts/mark/betty/Bet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/nl/arts/mark/betty/BetActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/nl/arts/mark/betty/BetActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/nl/arts/mark/betty/HomeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/nl/arts/mark/betty/HomeActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Betty.iws" />
@@ -74,10 +72,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AlarmReceiver.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AlarmReceiver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/arts/mark/betty/AlarmReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.065764025">
+            <state vertical-scroll-proportion="0.0">
               <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -116,11 +114,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomeActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HomeActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/arts/mark/betty/HomeActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.6711799">
+              <caret line="73" column="94" selection-start-line="73" selection-start-column="94" selection-end-line="73" selection-end-column="94" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1386,7 +1384,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/xml/pref_general.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/xml/pref_headers.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nl/arts/mark/betty/HomeActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/nl/arts/mark/betty/addBetActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/nl/arts/mark/betty/BetsDataSource.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/nl/arts/mark/betty/DeviceVootReceiver.java" />
@@ -1397,6 +1394,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/nl/arts/mark/betty/AlarmReceiver.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/nl/arts/mark/betty/Bet.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/nl/arts/mark/betty/BetActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nl/arts/mark/betty/HomeActivity.java" />
       </list>
     </option>
   </component>
@@ -1832,7 +1830,13 @@
       <option name="project" value="LOCAL" />
       <updated>1433111052705</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Fixed winner calculation">
+      <created>1433114290699</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1433114290699</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1928,7 +1932,8 @@
     <MESSAGE value="Fixed date formating" />
     <MESSAGE value="Win date now displays after solve" />
     <MESSAGE value="Correctly check if the winner of a bet has changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correctly check if the winner of a bet has changed" />
+    <MESSAGE value="Fixed winner calculation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed winner calculation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2298,16 +2303,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/arts/mark/betty/HomeActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/arts/mark/betty/addBetActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2353,8 +2348,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/arts/mark/betty/AlarmReceiver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.065764025">
+        <state vertical-scroll-proportion="0.0">
           <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nl/arts/mark/betty/HomeActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6711799">
+          <caret line="73" column="94" selection-start-line="73" selection-start-column="94" selection-end-line="73" selection-end-column="94" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
