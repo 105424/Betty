@@ -93,6 +93,7 @@ public class BetActivity extends AppCompatActivity {
                     winV.setVisibility(View.VISIBLE);
                     winL.setVisibility(View.VISIBLE);
                     dateL.setVisibility(View.VISIBLE);
+                    dateV.setVisibility(View.VISIBLE);
                     solve.setVisibility(View.GONE);
 
                 }
