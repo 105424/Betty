@@ -39,7 +39,8 @@ public class BetsDataSource {
             MySQLiteHelper.COLUMN_DATE,
             MySQLiteHelper.COLUMN_GAMBLES,
             MySQLiteHelper.COLUMN_WON,
-            MySQLiteHelper.COLUMN_WINNER
+            MySQLiteHelper.COLUMN_WINNER,
+            MySQLiteHelper.COLUMN_LASTWINNER
     };
 
     public BetsDataSource(Context context) {
@@ -64,6 +65,7 @@ public class BetsDataSource {
         values.put(MySQLiteHelper.COLUMN_GAMBLES, g.toJson(gambles));
         values.put(MySQLiteHelper.COLUMN_WINNER, "");
         values.put(MySQLiteHelper.COLUMN_WON, false);
+        values.put(MySQLiteHelper.COLUMN_LASTWINNER, "");
 
         long insertId = database.insert(MySQLiteHelper.TABLE_BETS, null,
                 values);
@@ -97,6 +99,7 @@ public class BetsDataSource {
         values.put(MySQLiteHelper.COLUMN_GAMBLES, g.toJson(b.getGambles()));
         values.put(MySQLiteHelper.COLUMN_WON, b.getWon());
         values.put(MySQLiteHelper.COLUMN_WINNER, b.getWinner());
+        values.put(MySQLiteHelper.COLUMN_LASTWINNER, b.getLastWinner());
 
         database.update(MySQLiteHelper.TABLE_BETS, values, MySQLiteHelper.COLUMN_ID + " = "+b.getId(), null);
     }
@@ -130,6 +133,8 @@ public class BetsDataSource {
 
         bet.setWon(cursor.getInt(4)>0);
         bet.setWinner(cursor.getString(5));
+
+        bet.setLastWinner(cursor.getString(6));
 
         return bet;
     }

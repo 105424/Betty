@@ -18,6 +18,8 @@ public class Bet {
     private Boolean won;
     private String winner;
 
+    private String lastWinner;
+
     public Bet(){
         won = false;
         winner = "";
@@ -77,6 +79,9 @@ public class Bet {
 
     public ArrayList<Gamble> getGambles() { return gambles; }
     public void setGambles(ArrayList<Gamble> gambles) { this.gambles = gambles;}
+
+    public String getLastWinner() { return lastWinner; }
+    public void setLastWinner(String lastWinner) { this.lastWinner =  lastWinner; }
 
     @Override
     public String toString() {

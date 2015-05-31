@@ -18,9 +18,10 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     public static final String COLUMN_GAMBLES = "gambles";
     public static final String COLUMN_WON = "won";
     public static final String COLUMN_WINNER = "winner";
+    public static final String COLUMN_LASTWINNER = "lastWinner";
 
     private static final String DATABASE_NAME = "betty.db";
-    private static final int DATABASE_VERSION = 4;
+    private static final int DATABASE_VERSION = 8;
 
     // Database creation sql statement
     private static final String DATABASE_CREATE = "create table "
@@ -30,7 +31,8 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
             + COLUMN_DATE + " text, "
             + COLUMN_GAMBLES + " text, "
             + COLUMN_WON + " BOOLEAN, "
-            + COLUMN_WINNER + " text "
+            + COLUMN_WINNER + " text, "
+            + COLUMN_LASTWINNER + " text "
             + ");";
 
     public MySQLiteHelper(Context context) {
@@ -50,6 +52,8 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_BETS);
         onCreate(db);
     }
+
+
 
 }
 

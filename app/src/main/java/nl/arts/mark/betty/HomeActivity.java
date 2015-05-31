@@ -1,7 +1,10 @@
 package nl.arts.mark.betty;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.SystemClock;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -28,7 +31,10 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        setService();
+
         BetsDataSource bs = new BetsDataSource(this);
+
         bs.open();
         bets = bs.getAllBets();
         bs.close();
@@ -36,7 +42,7 @@ public class HomeActivity extends AppCompatActivity {
         ls = (ListView)findViewById(R.id.l_bets);
         final Context context = this;
 
-        a = new ArrayAdapter<Bet>(
+        a = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_list_item_1,
                 bets
@@ -55,6 +61,15 @@ public class HomeActivity extends AppCompatActivity {
         });
         ls.setAdapter(a);
 
+    }
+
+    private void setService(){
+        Intent alarmIntent = new Intent(this, AlarmReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, alarmIntent, 0);
+
+        AlarmManager manager = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
+        int interval = 100;
+        manager.setInexactRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), interval, pendingIntent);
     }
 
     @Override
