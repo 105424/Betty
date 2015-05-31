@@ -9,22 +9,11 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.Parcel;
-import android.os.Parcelable;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import org.apache.http.entity.SerializableEntity;
-
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutput;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -131,7 +120,7 @@ public class BetsDataSource {
         }.getType());
         bet.setGambles(gambles);
 
-        bet.setWon(cursor.getInt(4)>0);
+        bet.setWon(cursor.getInt(4) > 0);
         bet.setWinner(cursor.getString(5));
 
         bet.setLastWinner(cursor.getString(6));

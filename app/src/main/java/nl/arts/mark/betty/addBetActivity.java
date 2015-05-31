@@ -1,22 +1,18 @@
 package nl.arts.mark.betty;
 
-import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 
 public class addBetActivity extends ActionBarActivity {
