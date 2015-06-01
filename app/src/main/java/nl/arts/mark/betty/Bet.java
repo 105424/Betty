@@ -34,6 +34,10 @@ public class Bet {
 
     public Gamble calcWinner(Date date){
 
+        if(gambles.size() <= 0){
+            return new Gamble();
+        }
+
         long ts = date.getTime();
 
         Gamble closest = gambles.get(0);

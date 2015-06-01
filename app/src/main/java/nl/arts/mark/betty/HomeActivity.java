@@ -54,6 +54,7 @@ public class HomeActivity extends AppCompatActivity {
                 Intent intent = new Intent(context, BetActivity.class);
                 intent.putExtra("betId", bet.getId());
                 startActivityForResult(intent, 9001);
+                overridePendingTransition(R.anim.abc_slide_in_bottom, R.anim.abc_slide_out_top);
             }
         });
         ls.setAdapter(a);
@@ -117,6 +118,7 @@ public class HomeActivity extends AppCompatActivity {
     public void b_addBetClick(View view){
         Intent intent = new Intent(this, addBetActivity.class);
         startActivityForResult(intent, 666);
+        overridePendingTransition(R.anim.abc_slide_in_top, R.anim.abc_slide_out_bottom);
     }
 
     @Override

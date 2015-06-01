@@ -109,6 +109,12 @@ public class BetActivity extends AppCompatActivity {
 
         setResult(RESULT_OK);
         finish();
+        overridePendingTransition(R.anim.abc_slide_in_bottom, R.anim.abc_slide_out_top);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.abc_slide_in_bottom, R.anim.abc_slide_out_top);
+    }
 }

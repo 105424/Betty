@@ -40,12 +40,20 @@ public class createGamble extends Activity {
         resultData.putExtra("gamble", gamble);
         setResult(Activity.RESULT_OK, resultData);
         finish();
+        overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out);
     }
 
     public void createGamble_cancel(View view){
         Intent resultData = new Intent();
         setResult(Activity.RESULT_CANCELED, resultData);
         finish();
+        overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out);
     }
 
 }

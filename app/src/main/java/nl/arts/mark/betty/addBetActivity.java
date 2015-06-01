@@ -74,6 +74,7 @@ public class addBetActivity extends ActionBarActivity {
     public void addGamble(View view){
         Intent intent = new Intent(this, createGamble.class);
         startActivityForResult(intent, 42);
+        overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out);
     }
 
     public void onActivityResult(int requestCode, int resultCode,
@@ -98,5 +99,12 @@ public class addBetActivity extends ActionBarActivity {
 
         setResult(RESULT_OK);
         finish();
+        overridePendingTransition(R.anim.abc_slide_in_top, R.anim.abc_slide_out_bottom);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.abc_slide_in_top, R.anim.abc_slide_out_bottom);
     }
 }
